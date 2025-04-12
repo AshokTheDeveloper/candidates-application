@@ -1,0 +1,18 @@
+GET http://localhost:3000/candidates?search=ashok&gender=Male&experience=2 Years&skills=JavaScript,Node.js&page=2&limit=10
+
+###
+GET http://localhost:3000/candidates
+
+
+###
+POST http://localhost:3000/candidates
+Content-Type: application/json
+
+  {
+    "name": "Bhavya Shah",
+    "phone": "9222222222",
+    "email": "bhavya.shah@example.com",
+    "gender": "Female",
+    "experience": "1 Year",
+    "skills": ["HTML", "CSS", "React"]
+  }
