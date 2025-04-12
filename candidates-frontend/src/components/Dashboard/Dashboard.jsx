@@ -21,10 +21,12 @@ const Dashboard = () => {
     fetchCandidates();
   }, [search, currentPage, genderFilter, experienceFilter, skillFilter]);
 
+  const url = "https://candidates-application.onrender.com"
+
   const fetchCandidates = async () => {
     try {
       const experience = `${experienceFilter}`;
-      const apiUrl = `http://localhost:3000/candidates?search=${search}&gender=${genderFilter}&skill=${skillFilter}&experience=${experienceFilter}&page=${currentPage}&limit=10`;
+      const apiUrl = `${url}/candidates?search=${search}&gender=${genderFilter}&skill=${skillFilter}&experience=${experienceFilter}&page=${currentPage}&limit=10`;
 
       const options = {
         method: "GET",
@@ -65,7 +67,7 @@ const Dashboard = () => {
 
   const handleSubmit = async (formData) => {
     console.log("Form Data:", formData);
-    const apiUrl = "http://localhost:3000/candidates";
+    const apiUrl = `${url}/candidates`;
     const options = {
       method: "POST",
       headers: {
